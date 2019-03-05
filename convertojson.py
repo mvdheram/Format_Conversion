@@ -14,7 +14,7 @@ for line in file:
     if (re.findall("[##]", line)):
         comments.append(line)
     else:
-        content.append(line)
+        content.append(line.strip())
 
 jsonfile.writelines(comments)
 reader1 = csv.DictReader(content,fieldnames,delimiter = ';')
