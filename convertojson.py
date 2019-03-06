@@ -8,17 +8,20 @@ content = []
 file = open('C:/Users/Meher/Desktop/dataset/sample1.txt', 'r')
 jsonfile = open('C:/Users/Meher/Desktop/dataset/file.json', 'w')
 
-fieldnames = ("Time","Type","Trial","L POR X [px]","L POR Y [px]","R POR X [px]","R POR Y [px]")
-
+count = 0
 for line in file:
+    count += 1
     if (re.findall("[##]", line)):
         comments.append(line)
     else:
-        content.append(line.strip())
+        content.append(line)
 
+fieldnames = content[0].split(';')
 jsonfile.writelines(comments)
 reader1 = csv.DictReader(content,fieldnames,delimiter = ';')
-
-for row in reader1:
+jsonfile.write('[')
+for idx,row in enumerate(reader1,start = 1):
     json.dump(row, jsonfile)
-    jsonfile.write('\n')
+    if (idx != count):
+        jsonfile.write(',')
+jsonfile.write(']')
