@@ -14,6 +14,7 @@ for line in f:
 
 length = len(data[0])
 k.writelines(comments)
+k.write('<?xml version="1.0"?>' + "\n")
 for row in data[1:]:
     k.writelines('<row>\n')
     for x in range(length):
