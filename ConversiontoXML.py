@@ -1,14 +1,19 @@
 import csv
 import re
 
-f=open('C:/Users/Meher/Desktop/dataset/sample1.txt','r')
+f = open('C:/Users/Meher/Desktop/dataset/sample1.txt','r')
+k = open('C:/Users/Meher/Desktop/dataset/sample.xml','w+')
+
 csv_reader = csv.reader(f,delimiter = ';')
 data = []
 comments = []
 
 
-for row in csv_reader:
-    data.append(row)
+for line in f:
+    if (re.findall("[##]",line)):
+        comments.append(line.strip().split(','))
+    else:
+        data.append(line.split(';'))
 
 def convert_row(row):
     return """<Time="%s">
@@ -18,5 +23,5 @@ def convert_row(row):
     <L POR Y [px]>%s</L POR Y [px]>
     <R POR X [px]>%s</R POR X [px]>
     <R POR Y [px]>%s</R POR Y [px]>""" % (row[0], row[1], row[2], row[3], row[4], row[5], row[6])
-
-print ('\n'.join([convert_row(row) for row in data[1:]]))
+k.writelines(comments)
+k.writelines('\n'.join([convert_row(row) for row in data[1:]]))
