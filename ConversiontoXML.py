@@ -10,15 +10,14 @@ for line in f:
     if (re.findall("[##]",line)):
         comments.append(line.strip().split(','))
     else:
-        data.append(line.split(';'))
+        data.append(line.strip('\n').split(';'))
 
-def changeToXML(row):
-    return """<Time="%s">
-    <Type>%s</Type>
-    <Trial>%s</Trial>
-    <L POR X [px]>%s</L POR X [px]>
-    <L POR Y [px]>%s</L POR Y [px]>
-    <R POR X [px]>%s</R POR X [px]>
-    <R POR Y [px]>%s</R POR Y [px]>""" % (row[0], row[1], row[2], row[3], row[4], row[5], row[6])
+q = len(data[0])
+
 k.writelines(comments)
-k.writelines('\n'.join([changeToXML(row) for row in data[1:]]))
+for row in data[1:]:
+    k.writelines('<row>\n')
+    for x in range(q):
+      k.writelines((( """<%s>%s</%s>""" % ((data[0][x],row[x],data[0][x])))))
+      k.writelines('\n')
+    k.writelines('</row>\n')
