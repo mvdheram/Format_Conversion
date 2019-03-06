@@ -12,12 +12,11 @@ for line in f:
     else:
         data.append(line.strip('\n').split(';'))
 
-q = len(data[0])
-
+length = len(data[0])
 k.writelines(comments)
 for row in data[1:]:
     k.writelines('<row>\n')
-    for x in range(q):
+    for x in range(length):
       k.writelines((( """<%s>%s</%s>""" % ((data[0][x],row[x],data[0][x])))))
       k.writelines('\n')
     k.writelines('</row>\n')
