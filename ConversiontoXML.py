@@ -1,13 +1,10 @@
-import csv
 import re
 
 f = open('C:/Users/Meher/Desktop/dataset/sample1.txt','r')
 k = open('C:/Users/Meher/Desktop/dataset/sample.xml','w+')
 
-csv_reader = csv.reader(f,delimiter = ';')
 data = []
 comments = []
-
 
 for line in f:
     if (re.findall("[##]",line)):
@@ -15,7 +12,7 @@ for line in f:
     else:
         data.append(line.split(';'))
 
-def convert_row(row):
+def changeToXML(row):
     return """<Time="%s">
     <Type>%s</Type>
     <Trial>%s</Trial>
@@ -24,4 +21,4 @@ def convert_row(row):
     <R POR X [px]>%s</R POR X [px]>
     <R POR Y [px]>%s</R POR Y [px]>""" % (row[0], row[1], row[2], row[3], row[4], row[5], row[6])
 k.writelines(comments)
-k.writelines('\n'.join([convert_row(row) for row in data[1:]]))
+k.writelines('\n'.join([changeToXML(row) for row in data[1:]]))
