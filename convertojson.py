@@ -11,7 +11,7 @@ jsonfile = open('C:/Users/Meher/Desktop/dataset/file.json', 'w')
 count = 0
 for line in file:
     count += 1
-    if (re.findall("[##]", line)):
+    if '##' in line:
         comments.append(line)
     else:
         content.append(line)
