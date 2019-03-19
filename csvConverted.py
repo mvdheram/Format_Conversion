@@ -57,18 +57,15 @@ for line in csvData:
         json.dump(dict(i),converted)
         converted.writelines(",")
         converted.writelines("\n")
-        #i = [(strip[i], strip[i + 1]) for i in range(0, len(strip), 2)]
-        #print(dict(i))
-        #json.dump(dict(i), converted)
-    if 'Gazepoints: (Location X; Location Y; Timestamp; Validity)' in line and 'Selection of (final) Stimulus is done, Confirmation or following Gazepoints: (Location X; Location Y; Timestamp; Validity' not in line :
+    if 'Gazepoints: (Location X; Location Y; Timestamp; Validity)' in line and 'Selection of (final) Stimulus is done, Confirmation or following' not in line :
         firstline = line
         stripped = firstline.split(":")
         i = [(stripped[i], stripped[i + 1]) for i in range(0, len(stripped), 2)]
         json.dump(dict(i),converted)
         converted.writelines('\n')
         converted.writelines(",{")
-        nextline1 = next(csvData)
-        comments = nextline1.strip().split(';')
+        nextline = next(csvData)
+        comments = nextline.strip().split(';')
         dump(comments)
     if 'Selection of (final) Stimulus is done, Confirmation or following Gazepoints: (Location X; Location Y; Timestamp; Validity' in line:
         firstline1 = line
@@ -86,7 +83,6 @@ for line in csvData:
         converted.writelines('{')
         converted.writelines('"'+'Trial'+'"'+':'+'"'+'completed'+'"')
         converted.writelines('}')
-        #converted.writelines(',')
 
 converted.writelines("]")
 

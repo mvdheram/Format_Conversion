@@ -18,6 +18,6 @@ k.writelines('<?xml version="1.0"?>' + "\n")
 for row in data[1:]:
     k.writelines('<row>\n')
     for x in range(length):
-      k.writelines((( """<%s>%s</%s>""" % ((data[0][x],row[x],data[0][x])))))
+      k.writelines((( "<%s>%s</%s>" % ((data[0][x],row[x],data[0][x])))))
       k.writelines('\n')
     k.writelines('</row>\n')
