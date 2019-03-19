@@ -15,10 +15,10 @@ for line in file:
         comments.append(line)
     else:
         content.append(line)
-
+print(content)
 fieldnames = content[0].split(';')
 jsonfile.writelines(comments)
-reader1 = csv.DictReader(content,fieldnames,delimiter = ';')
+reader1 = csv.DictReader(content,fieldnames,delimiter = ';') #check whether delimiter is workink
 jsonfile.write('[')
 for idx,row in enumerate(reader1,start = 1):
     json.dump(row, jsonfile)
