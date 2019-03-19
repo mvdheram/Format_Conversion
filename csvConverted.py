@@ -1,9 +1,4 @@
-
-import csv
-import re
 import json
-csvFile = ''
-xmlFile = 'myData.xml'
 
 converted = open('C:/Users/Meher/Desktop/dataset/sample.json', 'w')
 csvData = open('C:/Users/Meher/Desktop/dataset/csvfiles/full.csv', 'r')
@@ -41,6 +36,7 @@ for line in csvData:
         converted.writelines("\n")
         converted.writelines(',')
         json.dump(dict(striped[i].strip().split(":") for i in range(0,len(striped))),converted)
+        print(dict(striped[i].strip().split(":") for i in range(0,len(striped))))
         converted.writelines(",")
         converted.writelines("\n")
     if 'Target' in line:
