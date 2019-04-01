@@ -1,0 +1,71 @@
+## [BeGaze]
+## Converted from:	C:\Users\iView\AppData\Local\Temp\190215_BirtePG\P02-[6037e7d2-88a6-4e03-9351-6a0066d0ed25]\P02-eye_data.idf
+## Date:	15.02.2019 12:51:23
+## Version:	BeGaze 3.7.42
+## IDF Version:	9
+## Sample Rate:	60
+## Separator Type:	Unknown
+## Trial Count:	1
+## Uses Plane File:	False
+## Number of Samples:	4268
+## Reversed:	none
+## [Run]
+## Subject:	P02
+## Description:	Run4
+## [Calibration]
+## Calibration Area:	1920	1080
+## Calibration Point 0:	Position(960;540)
+## Calibration Point 1:	Position(96;54)
+## Calibration Point 2:	Position(1824;54)
+## Calibration Point 3:	Position(96;1026)
+## Calibration Point 4:	Position(1824;1026)
+## Calibration Point 5:	Position(96;540)
+## Calibration Point 6:	Position(960;54)
+## Calibration Point 7:	Position(1824;540)
+## Calibration Point 8:	Position(960;1026)
+## Calibration Point 9:	Position(480;270)
+## Calibration Point 10:	Position(1440;270)
+## Calibration Point 11:	Position(480;810)
+## Calibration Point 12:	Position(1440;810)
+## [Geometry]
+## Stimulus Dimension [mm]:	597	336
+## Head Distance [mm]:	700
+## [Hardware Setup]
+## System ID:	DDI-PINLAB-2
+## Operating System :	6.2.9200
+## IView X Version:	4.4.0.0
+## [Filter Settings]
+## Heuristics:	False
+## Heuristics Stage:	0
+## Bilateral:	True
+## Gaze Cursor Filter:	False
+## Saccade Length [px]:	0
+## Filter Depth [ms]:	0
+## Format:	LEFT, RIGHT, POR
+##
+#
+Time;Type;Trial;L POR X [px];L POR Y [px];R POR X [px];R POR Y [px]
+3700654126;SMP;1;1066,406;51,954;1019,856;60,356;
+3700670820;SMP;1;1067,763;52,806;1019,866;60,936;
+3700687489;SMP;1;1068,174;53,005;1021,920;60,809;
+3700704322;SMP;1;1067,347;53,818;1019,779;60,681;
+3700720792;SMP;1;1067,778;52,983;1020,012;60,698;
+3700737474;SMP;1;1067,888;53,431;1021,286;59,804;
+3700754059;SMP;1;1067,756;53,423;1022,113;60,859;
+3700770850;SMP;1;1057,236;54,617;1016,205;63,051;
+3700787668;SMP;1;831,219;145,426;829,569;161,893;
+3700804221;SMP;1;691,864;187,075;702,919;256,826;
+3700820746;SMP;1;690,884;211,376;697,336;251,467;
+3700837604;SMP;1;685,231;214,608;688,735;251,398;
+3700854230;SMP;1;681,193;216,794;691,779;251,437;
+3700870943;SMP;1;681,834;226,254;688,594;251,888;
+3700887559;SMP;1;669,433;228,221;675,727;252,509;
+3700904253;SMP;1;476,489;210,486;521,756;247,834;
+3700920847;SMP;1;396,688;192,449;413,192;242,308;
+3700937450;SMP;1;386,272;199,433;419,841;243,276;
+3700954295;SMP;1;389,975;197,393;407,020;240,856;
+3700970828;SMP;1;391,556;198,105;407,648;240,041;
+3700987440;SMP;1;390,752;200,834;409,437;235,522;
+3701004208;SMP;1;389,028;198,947;405,312;234,337;
+3701020869;SMP;1;392,238;199,578;407,961;230,902;
+3701037444;SMP;1;390,299;193,757;405,078;229,066;
