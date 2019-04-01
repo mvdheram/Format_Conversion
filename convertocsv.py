@@ -1,6 +1,4 @@
-import re
 import csv
-import fileinput
 
 with open('C:/Users/Meher/Desktop/dataset/sample1.txt','r') as file :
     file.seek(0,0)
