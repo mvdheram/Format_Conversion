@@ -1,3 +1,4 @@
+#strip unnesary ,
 import json
 
 converted = open('C:/Users/Meher/Desktop/dataset/sample.json', 'w')
